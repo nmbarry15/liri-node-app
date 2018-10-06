@@ -1,0 +1,50 @@
+
+-----------------------------------
+You entered movie-this Gladiator
+Title: Gladiator
+Release Year: 2000
+IMDB Rating: 8.5
+Rotten Tomamtoes Rating: 77%
+Produced in: USA, UK
+Language: English
+Plot: When a Roman General is betrayed, and his family murdered by an emperor's corrupt son, he comes to Rome as a gladiator to seek revenge.
+Actors: Russell Crowe, Joaquin Phoenix, Connie Nielsen, Oliver Reed
+-----------------------------------
+
+-----------------------------------
+You entered concert-this Brett Young
+Upcoming concert dates for Brett Young:
+
+1
+Venue: Van Andel Arena
+Location: Grand Rapids, MI
+Date: 10/06/2018
+
+2
+Venue: Iowa State University
+Location: Ames, IA
+Date: 10/07/2018
+
+3
+Venue: Ryman Auditorium
+Location: Nashville, TN
+Date: 10/10/2018
+
+4
+Venue: Verizon Arena
+Location: North Little Rock, AR
+Date: 10/11/2018
+
+5
+Venue: Chesapeake Energy Arena
+Location: Oklahoma City, OK
+Date: 10/12/2018
+
+-----------------------------------
+-----------------------------------
+You entered spotify-this-song Beautiful Believer
+Artist: Brett Young
+Song Name: Beautiful Believer
+Preview Link: https://open.spotify.com/track/0lrqP022E0DDCG7tPjAxPp
+Album: Brett Young
+-----------------------------------
