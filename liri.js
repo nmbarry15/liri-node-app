@@ -58,17 +58,17 @@ function doMovie(movieName) {
             console.log("Plot: " + plot);
             console.log("Actors: " + actors);
 
-            var text = "\n-----------------------------------" +
+            var text = "-----------------------------------" +
                 "\nYou entered movie-this " + movieName +
                 "\nTitle: " + title +
                 "\nRelease Year: " + year +
-                "\nIMDB Rating: " +  imdbRating +
+                "\nIMDB Rating: " + imdbRating +
                 "\nRotten Tomamtoes Rating: " + rottenRating +
                 "\nProduced in: " + country +
                 "\nLanguage: " + language +
                 "\nPlot: " + plot +
                 "\nActors: " + actors +
-                "\n-----------------------------------\n";
+                "\n-----------------------------------";
             fs.appendFile("log.txt", text, function (err) {
                 if (err) {
                     console.log(err);
@@ -95,26 +95,16 @@ function doConcert(artistName) {
                 var date = moment(JSON.parse(body)[i].datetime, "YYYY-MM-DD").format("MM/DD/YYYY");
                 if (i === 0) {
                     console.log("Upcoming concert dates for " + artistName + ":")
-                    console.log("")
                 }
-                console.log(i + 1)
-                console.log("Venue: " + venue);
-                console.log("Location: " + location);
-                console.log("Date: " + date);
-                console.log("")
+                console.log((i + 1) + ". " + location + " at " + venue + " " + date);
                 if (i === 0) {
                     text = text + "\n-----------------------------------" +
                         "\nYou entered concert-this " + artistName +
                         "\nUpcoming concert dates for " + artistName + ":\n";
                 }
-                text = text +
-                    "\n" + (i + 1) +
-                    "\nVenue: " + venue +
-                    "\nLocation: " + location +
-                    "\nDate: " + date +
-                    "\n";
+                text = text + (i + 1) + ". " + location + " at " + venue + " " + date + "\n"
                 if (i === 4) {
-                    text = text + "\n-----------------------------------"
+                    text = text + "-----------------------------------\n"
                 }
             }
             fs.appendFile("log.txt", text, function (err) {
@@ -138,21 +128,29 @@ function doSpotify(songName) {
             console.log('Error occurred: ' + err);
             return;
         }
-        var artist = data.tracks.items[0].artists[0].name;
-        var song = data.tracks.items[0].name;
-        var link = data.tracks.items[0].external_urls.spotify;
-        var album = data.tracks.items[0].album.name;
-        console.log("Artist: " + artist);
-        console.log("Song Name: " + song);
-        console.log("Preview Link: " + link);
-        console.log("Album: " + album);
-        var text = "\n-----------------------------------" +
-            "\nYou entered spotify-this-song " + songName +
-            "\nArtist: " + artist +
-            "\nSong Name: " + song +
-            "\nPreview Link: " + link +
-            "\nAlbum: " + album +
-            "\n-----------------------------------\n";
+        for (var i = 0; i < 5; i++) {
+            var artist = data.tracks.items[i].artists[0].name;
+            var song = data.tracks.items[i].name;
+            var link = data.tracks.items[i].external_urls.spotify;
+            var album = data.tracks.items[i].album.name;
+            console.log(i+1)
+            console.log("Artist(s): " + artist);
+            console.log("Song Name: " + song);
+            console.log("Preview Link: " + link);
+            console.log("Album: \n" + album);
+            if(i === 0){
+                var text = "-----------------------------------\n" + 
+                "You entered spotify-this-song " + songName + "\n";
+            }
+            text = text + (i+1) +
+                "\nArtist: " + artist +
+                "\nSong Name: " + song +
+                "\nPreview Link: " + link +
+                "\nAlbum: " + album + "\n";
+            if(i === 4){
+               text = text + "-----------------------------------\n";
+            }
+        }
         fs.appendFile("log.txt", text, function (err) {
             if (err) {
                 console.log(err);
